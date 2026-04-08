@@ -15,8 +15,8 @@ obsidian_host = os.getenv("OBSIDIAN_HOST", "127.0.0.1")
 if api_key == "":
     raise ValueError(f"OBSIDIAN_API_KEY environment variable required. Working directory: {os.getcwd()}")
 
-TOOL_LIST_FILES_IN_VAULT = "obsidian_list_files_in_vault"
-TOOL_LIST_FILES_IN_DIR = "obsidian_list_files_in_dir"
+TOOL_LIST_FILES_IN_VAULT = "list_files_in_vault"
+TOOL_LIST_FILES_IN_DIR = "list_files_in_dir"
 
 class ToolHandler():
     def __init__(self, tool_name: str):
@@ -93,7 +93,7 @@ class ListFilesInDirToolHandler(ToolHandler):
     
 class GetFileContentsToolHandler(ToolHandler):
     def __init__(self):
-        super().__init__("obsidian_get_file_contents")
+        super().__init__("get_file_contents")
 
     def get_tool_description(self):
         return Tool(
@@ -129,7 +129,7 @@ class GetFileContentsToolHandler(ToolHandler):
     
 class SearchToolHandler(ToolHandler):
     def __init__(self):
-        super().__init__("obsidian_simple_search")
+        super().__init__("simple_search")
 
     def get_tool_description(self):
         return Tool(
@@ -191,7 +191,7 @@ class SearchToolHandler(ToolHandler):
     
 class AppendContentToolHandler(ToolHandler):
    def __init__(self):
-       super().__init__("obsidian_append_content")
+       super().__init__("append_content")
 
    def get_tool_description(self):
        return Tool(
@@ -230,7 +230,7 @@ class AppendContentToolHandler(ToolHandler):
    
 class PatchContentToolHandler(ToolHandler):
    def __init__(self):
-       super().__init__("obsidian_patch_content")
+       super().__init__("patch_content")
 
    def get_tool_description(self):
        return Tool(
@@ -289,7 +289,7 @@ class PatchContentToolHandler(ToolHandler):
        
 class PutContentToolHandler(ToolHandler):
    def __init__(self):
-       super().__init__("obsidian_put_content")
+       super().__init__("put_content")
 
    def get_tool_description(self):
        return Tool(
@@ -329,7 +329,7 @@ class PutContentToolHandler(ToolHandler):
 
 class DeleteFileToolHandler(ToolHandler):
    def __init__(self):
-       super().__init__("obsidian_delete_file")
+       super().__init__("delete_file")
 
    def get_tool_description(self):
        return Tool(
@@ -372,7 +372,7 @@ class DeleteFileToolHandler(ToolHandler):
    
 class ComplexSearchToolHandler(ToolHandler):
    def __init__(self):
-       super().__init__("obsidian_complex_search")
+       super().__init__("complex_search")
 
    def get_tool_description(self):
        return Tool(
@@ -436,7 +436,7 @@ class ComplexSearchToolHandler(ToolHandler):
 
 class BatchGetFileContentsToolHandler(ToolHandler):
     def __init__(self):
-        super().__init__("obsidian_batch_get_file_contents")
+        super().__init__("batch_get_file_contents")
 
     def get_tool_description(self):
         return Tool(
@@ -475,7 +475,7 @@ class BatchGetFileContentsToolHandler(ToolHandler):
 
 class PeriodicNotesToolHandler(ToolHandler):
     def __init__(self):
-        super().__init__("obsidian_get_periodic_note")
+        super().__init__("get_periodic_note")
 
     def get_tool_description(self):
         return Tool(
@@ -526,7 +526,7 @@ class PeriodicNotesToolHandler(ToolHandler):
         
 class RecentPeriodicNotesToolHandler(ToolHandler):
     def __init__(self):
-        super().__init__("obsidian_get_recent_periodic_notes")
+        super().__init__("get_recent_periodic_notes")
 
     def get_tool_description(self):
         return Tool(
@@ -586,7 +586,7 @@ class RecentPeriodicNotesToolHandler(ToolHandler):
         
 class RecentChangesToolHandler(ToolHandler):
     def __init__(self):
-        super().__init__("obsidian_get_recent_changes")
+        super().__init__("get_recent_changes")
 
     def get_tool_description(self):
         return Tool(
