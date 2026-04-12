@@ -1,5 +1,6 @@
 import requests
 import urllib.parse
+import urllib3
 import os
 from typing import Any
 
@@ -23,6 +24,9 @@ class Obsidian():
         self.port = port
         self.verify_ssl = verify_ssl
         self.timeout = (3, 6)
+
+        if not self.verify_ssl and self.host in ('127.0.0.1', 'localhost'):
+            urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
     def get_base_url(self) -> str:
         return f'{self.protocol}://{self.host}:{self.port}'
